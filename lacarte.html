@@ -66,46 +66,4 @@
           <p>&copy; 2025 The Bootlegger - Tous droits réservés</p>
       </div>
   </footer>
-  <button onclick="scrollToTop()" id="btnTop" title="Retour en haut">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-    <script>
-        window.onscroll = function() {
-    const btn = document.getElementById("btnTop");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
-
-  // Fonction pour retourner en haut
-  function scrollToTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-        // Simple smooth scrolling for menu navigation
-        document.querySelectorAll('.menu-nav-item').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all items
-                document.querySelectorAll('.menu-nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Add active class to clicked item
-                this.classList.add('active');
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 120,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+ 
