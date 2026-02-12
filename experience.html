@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Expérience & Galerie | Le Bootlegger</title>
+    <meta name="description" content="Concerts live, soirées à thème et ambiance feutrée. Découvrez ce que nos clients disent du Bootlegger.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">ACCUEIL</a></li>
+        <li><a href="lacarte.html">LA CARTE</a></li>
+        <li><a href="experience.html">L'EXPÉRIENCE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+</nav>
+
+<div class="hero" style="height: 50vh;">
+    <h1>L'EXPÉRIENCE</h1>
+    <p>Musique Live & Ambiance Feutrée</p>
+</div>
+
+<section class="section">
+    <h2 class="section-title">Les Soirées Bootlegger</h2>
+    <p>
+        De mai à septembre, notre terrasse s'anime au rythme des concerts live. 
+        Jazz, Blues, Rock... nous accueillons des artistes locaux pour accompagner vos dégustations.
+        En hiver, profitez de la chaleur de notre salle intérieure au décor authentique.
+    </p>
+    
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/concert.jpg" alt="Concert Live au bar"></div>
+        <div class="gallery-item"><img src="images/IMG_1184.jpeg" alt="Soirée DJ Set"></div>
+        <div class="gallery-item"><img src="images/fond.jpeg" alt="Intérieur du bar"></div>
+    </div>
+</section>
+
+<section class="section" style="background-color: #1a1a1a;">
+    <h2 class="section-title">Ils ont adoré le moment</h2>
+    
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Un lieu hors du temps. La musique était parfaite et le service au top. Mon nouveau QG à Bourg !"</p>
+            <span class="review-author">- Julien M. (Avis Google)</span>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Superbe découverte ! Les planches sont copieuses et les cocktails originaux. Je recommande la terrasse."</p>
+            <span class="review-author">- Élodie R. (Avis Google)</span>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Ambiance incroyable pour l'anniversaire du bar. Le DJ set était génial."</p>
+            <span class="review-author">- Sam B. (Avis Google)</span>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <p style="margin-bottom: 20px; color: #ccc;">Rejoignez nos clients satisfaits</p>
+        <a href="https://g.page/r/TON_LIEN_GOOGLE_AVIS" target="_blank" class="btn-gold filled">
+            <i class="fab fa-google"></i> Lire tous les avis sur Google
+        </a>
+        <br><br>
+        <a href="https://search.google.com/local/writereview?placeid=TON_PLACE_ID" target="_blank" style="font-size: 0.9rem; text-decoration: underline;">
+            Ou laissez-nous un avis
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">L'ambiance en Story</h2>
+    <p>Cliquez pour découvrir l'univers du Bootlegger</p>
+
+    <div class="story-container" id="storySlider">
+        <div class="story-slide active">
+            <img src="images/concert.jpg" alt="Concert">
+            <div class="story-overlay"><span>Live Jazz Night</span></div>
+        </div>
+        <div class="story-slide">
+            <img src="images/IMG_1184.jpeg" alt="Soirée">
+            <div class="story-overlay"><span>L'art du service</span></div>
+        </div>
+        <div class="story-slide">
+            <img src="images/fond.jpeg" alt="Bar">
+            <div class="story-overlay"><span>Ambiance feutrée</span></div>
+        </div>
+        
+        <div class="story-progress">
+            <div class="progress-segment"><div class="progress-fill"></div></div>
+            <div class="progress-segment"><div class="progress-fill"></div></div>
+            <div class="progress-segment"><div class="progress-fill"></div></div>
+        </div>
+
+        <button class="story-nav prev" onclick="changeStory(-1)">❮</button>
+        <button class="story-nav next" onclick="changeStory(1)">❯</button>
+    </div>
+
+
+<script>
+    let currentStory = 0;
+    const stories = document.querySelectorAll('.story-slide');
+    const fills = document.querySelectorAll('.progress-fill');
+
+    function showStory(index) {
+        stories.forEach(s => s.classList.remove('active'));
+        fills.forEach(f => f.style.width = '0%');
+        
+        if (index >= stories.length) currentStory = 0;
+        if (index < 0) currentStory = stories.length - 1;
+        
+        stories[currentStory].classList.add('active');
+        fills[currentStory].style.width = '100%';
+    }
+
+    function changeStory(n) {
+        currentStory += n;
+        showStory(currentStory);
+    }
+
+    // Auto-play (facultatif)
+    setInterval(() => {
+        changeStory(1);
+    }, 5000);
+</script>
+
+    <div style="margin-top: 30px;">
+        <a href="https://www.instagram.com/thebootlegger.bar" target="_blank" class="btn-gold">
+            <i class="fab fa-instagram"></i> Voir nos Stories & Réels
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>THE BOOTLEGGER</h4>
+            <p>Bar à cocktails style Prohibition.</p>
+            <p>2 Rue de la République<br>01000 Bourg-en-Bresse</p>
+        </div>
+        <div class="footer-col">
+            <h4>HORAIRES</h4>
+            <p>Mar - Mer : 17h - 00h</p>
+            <p>Jeu - Sam : 17h - 01h</p>
+            <p>Dim - Lun : Fermé</p>
+        </div>
+        <div class="footer-col">
+            <h4>SUIVEZ-NOUS</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/thebootlegger.bar" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/bootlegger.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 The Bootlegger. Tous droits réservés. <a href="mentions-legales.html">Mentions Légales</a>.</p>
+    </div>
+</footer>
+
+</body>
+</html>
