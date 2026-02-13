@@ -29,6 +29,11 @@
 <body>
 
 <nav>
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <ul>
         <li><a href="index.html">ACCUEIL</a></li>
         <li><a href="lacarte.html">LA CARTE</a></li>
@@ -105,6 +110,25 @@
         <p>&copy; 2025 The Bootlegger. Tous droits réservés. <a href="mentions-legales.html">Mentions Légales</a>.</p>
     </div>
 </footer>
+<script>
+    const burger = document.getElementById('burger');
+const nav = document.getElementById('nav-links');
 
+burger.addEventListener('click', () => {
+    // Affiche/Cache le menu
+    nav.classList.toggle('nav-active');
+    
+    // Anime le burger en croix
+    burger.classList.toggle('toggle');
+});
+
+// Ferme le menu si on clique sur un lien (utile pour les sites d'une seule page)
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('nav-active');
+        burger.classList.remove('toggle');
+    });
+});
+</script>
 </body>
 </html>
