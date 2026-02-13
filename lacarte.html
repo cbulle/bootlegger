@@ -16,7 +16,7 @@
         <span></span>
         <span></span>
     </div>
-    <ul>
+    <ul id="nav-links">
         <li><a href="index.html">ACCUEIL</a></li>
         <li><a href="lacarte.html">LA CARTE</a></li>
         <li><a href="experience.html">L'EXPÉRIENCE</a></li>
@@ -79,14 +79,11 @@
 const nav = document.getElementById('nav-links');
 
 burger.addEventListener('click', () => {
-    // Affiche/Cache le menu
     nav.classList.toggle('nav-active');
     
-    // Anime le burger en croix
     burger.classList.toggle('toggle');
 });
 
-// Ferme le menu si on clique sur un lien (utile pour les sites d'une seule page)
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('nav-active');

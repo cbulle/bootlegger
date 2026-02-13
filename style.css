@@ -405,8 +405,8 @@ footer {
     .burger {
         display: flex; /* On l'affiche enfin */
         position: absolute;
-        right: 20px;
-        top: 20px;
+        left: 20px;
+        top: -8px;
     }
 
     nav ul {
@@ -414,7 +414,7 @@ footer {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         height: 100vh;
         width: 70%;
         background-color: rgba(13, 13, 13, 0.98);
