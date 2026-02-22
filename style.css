@@ -283,7 +283,6 @@ footer {
     nav ul { flex-direction: column; text-align: center; gap: 10px; }
     .contact-wrapper { flex-direction: column; }
 }
-/* --- Styles Galerie Photo Carte --- */
 .photo-caption {
     position: absolute;
     bottom: 0;
@@ -305,7 +304,7 @@ footer {
 /* --- Styles Story Insta --- */
 .story-container {
     position: relative;
-    max-width: 350px; /* Format téléphone */
+    max-width: 350px;
     height: 600px;
     margin: 40px auto;
     border-radius: 15px;
@@ -400,17 +399,16 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Style mobile (quand l'écran est petit) */
 @media (max-width: 768px) {
     .burger {
-        display: flex; /* On l'affiche enfin */
+        display: flex; 
         position: absolute;
         left: 20px;
         top: -8px;
     }
 
     nav ul {
-        display: none; /* On cache la liste de liens classique */
+        display: none; 
         flex-direction: column;
         position: fixed;
         top: 0;
