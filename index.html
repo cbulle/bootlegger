@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Bootlegger | Bar à Cocktails & Ambiance Speakeasy à Bourg-en-Bresse</title>
-    <meta name="description" content="Plongez dans les années 20 au Bootlegger. Le meilleur bar à cocktails de Bourg-en-Bresse. Ambiance Prohibition, terrasse d'été et concerts live.">
+    <title>Le Bootlegger | Bar à Cocktails & Mixologie à Bourg-en-Bresse</title>
+    <meta name="description" content="Vivez l'expérience Bootlegger : l'art du cocktail, l'énergie du comptoir et une ambiance Prohibition unique à Bourg-en-Bresse.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -26,43 +26,49 @@
 
 <header class="hero">
     <h1>THE BOOTLEGGER</h1>
-    <p>L'art du cocktail clandestin au cœur de Bourg-en-Bresse</p>
+    <p>L'art du cocktail clandestin & l'énergie de la nuit</p>
     <div class="cta-group">
-        <a href="lacarte.html" class="btn-gold filled">Voir la Carte</a>
-        <a href="contact.html" class="btn-gold">Contacter</a>
+        <a href="lacarte.html" class="btn-gold filled">Découvrir la Carte</a>
+        <a href="experience.html" class="btn-gold">Vivre l'Expérience</a>
     </div>
 </header>
 
 <section class="section">
-    <h2 class="section-title">L'Esprit Prohibition</h2>
-    <p>
-        Poussez la porte et remontez le temps. Inspiré des bars clandestins des années 20, 
-        <strong>Le Bootlegger</strong> est bien plus qu'un bar : c'est une atmosphère. 
-        Lumières tamisées, décor d'époque et jazz en fond sonore accompagnent vos soirées.
-    </p>
-    <p>
-        Situé à deux pas de la Porte des Jacobins, nous vous accueillons pour déguster des spiritueux d'exception 
-        et des cocktails signatures créés par nos mixologues passionnés.
-    </p>
+    <h2 class="section-title">L'Âme du Comptoir</h2>
+    <div class="barman-section">
+        <div class="barman-image">
+            <img src="images/barman.png" alt="Notre mixologue en pleine création, format vertical">
+        </div>
+        <div class="barman-text">
+            <span class="energy-caption">Précision. Passion. Performance.</span>
+            <p>
+                Au Bootlegger, chaque cocktail est un spectacle. Regardez nos mixologues dompter les saveurs, 
+                jongler avec les textures et faire jaillir l'énergie de la nuit sous vos yeux. 
+                Ici, le geste est précis, l'accueil est solaire et chaque verre raconte une histoire.
+            </p>
+            <p style="margin-top: 20px;">
+                <em>Venez prendre place au comptoir, là où bat le cœur du bar.</em>
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="section" style="background-color: #121212;">
-    <h2 class="section-title">Ce qu'ils en disent</h2>
-    <div class="reviews-grid">
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Les meilleurs cocktails de Bourg ! L'ambiance est feutrée, le service impeccable. Un vrai voyage dans le temps."</p>
-            <span class="review-author">- Thomas D.</span>
+<section class="section" style="background-color: #1a1a1a;">
+    <h2 class="section-title">Instants Volés</h2>
+    <p style="margin-bottom: 40px;">L'effervescence du shaker, l'éclat des rires, l'immersion totale.</p>
+    
+    <div class="story-gallery-grid">
+        <div class="story-gallery-item">
+            <img src="images/jerôme.png" alt="L'énergie du service, format vertical">
+            <div class="photo-caption">L'Art du Geste</div>
         </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Super découverte. La terrasse en été est géniale et l'intérieur est très cosy. À tester absolument."</p>
-            <span class="review-author">- Sarah L.</span>
+        <div class="story-gallery-item">
+            <img src="images/cocktail-flamme-vertical.jpg" alt="Mixologie avec flamme, format vertical">
+            <div class="photo-caption">La Flamme</div>
         </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>"Carte originale qui change de l'ordinaire. Le personnel connaît son métier sur le bout des doigts."</p>
-            <span class="review-author">- Marc P.</span>
+        <div class="story-gallery-item">
+            <img src="images/exterieur.png" alt="Zoom sur le patrimoine et la porte des jacobins ambiance historique">
+            <div class="photo-caption">Immersion</div>
         </div>
     </div>
 </section>
@@ -85,29 +91,30 @@
             <div class="social-links">
                 <a href="https://www.instagram.com/thebootlegger.bar" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/bootlegger.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@the.bootlegger.bar?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 The Bootlegger. Tous droits réservés. <a href="mentions-legales.html">Mentions Légales</a>.</p>
+        <p>&copy; 2025 The Bootlegger. <a href="mentions-legales.html">Mentions Légales</a>.</p>
     </div>
 </footer>
+
 <script>
     const burger = document.getElementById('burger');
-const nav = document.getElementById('nav-links');
+    const nav = document.getElementById('nav-links');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
-    
-    burger.classList.toggle('toggle');
-});
-
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav-active');
-        burger.classList.remove('toggle');
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
     });
-});
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        });
+    });
 </script>
 </body>
 </html>

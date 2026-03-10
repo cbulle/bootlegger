@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Expérience & Galerie | Le Bootlegger</title>
-    <meta name="description" content="Concerts live, soirées à thème et ambiance feutrée. Découvrez ce que nos clients disent du Bootlegger.">
+    <title>L'Expérience | Le Bootlegger</title>
+    <meta name="description" content="Concerts live, soirées à thème et ambiance feutrée. Plongez dans l'énergie du Bootlegger.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,22 +19,21 @@
     <ul id="nav-links">
         <li><a href="index.html">ACCUEIL</a></li>
         <li><a href="lacarte.html">LA CARTE</a></li>
-        <li><a href="experience.html">L'EXPÉRIENCE</a></li>
+        <li><a href="experience.html" class="active">L'EXPÉRIENCE</a></li>
         <li><a href="contact.html">CONTACT</a></li>
     </ul>
 </nav>
 
 <div class="hero" style="height: 50vh;">
     <h1>L'EXPÉRIENCE</h1>
-    <p>Musique Live & Ambiance Feutrée</p>
+    <p>Musique Live, Shakers & Ambiance Feutrée</p>
 </div>
 
 <section class="section">
     <h2 class="section-title">Les Soirées Bootlegger</h2>
     <p>
         De mai à septembre, notre terrasse s'anime au rythme des concerts live. 
-        Jazz, Blues, Rock... nous accueillons des artistes locaux pour accompagner vos dégustations.
-        En hiver, profitez de la chaleur de notre salle intérieure au décor authentique.
+        Jazz, Blues, Rock... l'énergie monte d'un cran. En hiver, réfugiez-vous dans la chaleur de notre salle clandestine, là où les secrets se partagent autour d'un cocktail d'exception.
     </p>
     
     <div class="gallery-grid">
@@ -44,7 +43,7 @@
     </div>
 </section>
 
-<section class="section" style="background-color: #1a1a1a;">
+<section class="section">
     <h2 class="section-title">Ils ont adoré le moment</h2>
     
     <div class="reviews-grid">
@@ -77,67 +76,57 @@
     </div>
 </section>
 
+
 <section class="section">
-    <h2 class="section-title">L'ambiance en Story</h2>
-    <p>Cliquez pour découvrir l'univers du Bootlegger</p>
+    <h2 class="section-title">Vibrez avec nous</h2>
+    <p style="margin-bottom: 40px; color: var(--text-muted);">L'effervescence du bar continue sur nos réseaux. Découvrez nos backstages, nos recettes secrètes et l'ambiance de nos soirées.</p>
 
-    <div class="story-container" id="storySlider">
-        <div class="story-slide active">
-            <img src="images/concert.jpg" alt="Concert">
-            <div class="story-overlay"><span>Live Jazz Night</span></div>
-        </div>
-        <div class="story-slide">
-            <img src="images/IMG_1184.jpeg" alt="Soirée">
-            <div class="story-overlay"><span>L'art du service</span></div>
-        </div>
-        <div class="story-slide">
-            <img src="images/fond.jpeg" alt="Bar">
-            <div class="story-overlay"><span>Ambiance feutrée</span></div>
-        </div>
+    <div class="social-media-wrapper">
         
-        <div class="story-progress">
-            <div class="progress-segment"><div class="progress-fill"></div></div>
-            <div class="progress-segment"><div class="progress-fill"></div></div>
-            <div class="progress-segment"><div class="progress-fill"></div></div>
+        <div class="social-column">
+            <div class="story-container" id="instaSlider">
+                <div class="story-slide active">
+                    <img src="images/IMG_1184.jpeg" alt="Story Insta 1">
+                    <div class="story-overlay"><span>L'art du service</span></div>
+                </div>
+                <div class="story-slide">
+                    <img src="images/fond.jpeg" alt="Story Insta 2">
+                    <div class="story-overlay"><span>Ambiance feutrée</span></div>
+                </div>
+                
+                <div class="story-progress">
+                    <div class="progress-segment"><div class="progress-fill"></div></div>
+                    <div class="progress-segment"><div class="progress-fill"></div></div>
+                </div>
+
+                <button class="story-nav prev" onclick="changeSlide('instaSlider', -1)">❮</button>
+                <button class="story-nav next" onclick="changeSlide('instaSlider', 1)">❯</button>
+            </div>
+            <a href="https://www.instagram.com/thebootlegger.bar" target="_blank" class="btn-gold filled"><i class="fab fa-instagram"></i> DÉCOUVRIR</a>
         </div>
 
-        <button class="story-nav prev" onclick="changeStory(-1)">❮</button>
-        <button class="story-nav next" onclick="changeStory(1)">❯</button>
-    </div>
+        <div class="social-column">
+            <div class="story-container" id="tiktokSlider">
+                <div class="story-slide active">
+                    <img src="images/concert.jpg" alt="TikTok 1">
+                    <div class="story-overlay"><span>Mixologie Live</span></div>
+                </div>
+                <div class="story-slide">
+                    <img src="images/fond.jpeg" alt="TikTok 2">
+                    <div class="story-overlay"><span>Nos secrets</span></div>
+                </div>
 
+                <div class="story-progress">
+                    <div class="progress-segment"><div class="progress-fill"></div></div>
+                    <div class="progress-segment"><div class="progress-fill"></div></div>
+                </div>
 
-<script>
-    let currentStory = 0;
-    const stories = document.querySelectorAll('.story-slide');
-    const fills = document.querySelectorAll('.progress-fill');
+                <button class="story-nav prev" onclick="changeSlide('tiktokSlider', -1)">❮</button>
+                <button class="story-nav next" onclick="changeSlide('tiktokSlider', 1)">❯</button>
+            </div>
+            <a href="https://www.tiktok.com/@the.bootlegger.bar" target="_blank" class="btn-gold filled"><i class="fab fa-tiktok"></i> DÉCOUVRIR</a>
+        </div>
 
-    function showStory(index) {
-        stories.forEach(s => s.classList.remove('active'));
-        fills.forEach(f => f.style.width = '0%');
-        
-        if (index >= stories.length) currentStory = 0;
-        if (index < 0) currentStory = stories.length - 1;
-        
-        stories[currentStory].classList.add('active');
-        fills[currentStory].style.width = '100%';
-    }
-
-    function changeStory(n) {
-        currentStory += n;
-        showStory(currentStory);
-    }
-    setInterval(() => {
-        changeStory(1);
-    }, 5000);
-
-
-
-</script>
-
-    <div style="margin-top: 30px;">
-        <a href="https://www.instagram.com/thebootlegger.bar" target="_blank" class="btn-gold">
-            <i class="fab fa-instagram"></i> Voir nos Stories & Réels
-        </a>
     </div>
 </section>
 
@@ -145,7 +134,7 @@
     <div class="footer-content">
         <div class="footer-col">
             <h4>THE BOOTLEGGER</h4>
-            <p>Bar à cocktails style Prohibition.</p>
+            <p>Le repaire de la mixologie à Bourg.</p>
             <p>2 Rue de la République<br>01000 Bourg-en-Bresse</p>
         </div>
         <div class="footer-col">
@@ -155,36 +144,81 @@
             <p>Dim - Lun : Fermé</p>
         </div>
         <div class="footer-col">
-            <h4>SUIVEZ-NOUS</h4>
+            <h4>SUIVEZ LE MOUVEMENT</h4>
             <div class="social-links">
                 <a href="https://www.instagram.com/thebootlegger.bar" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/bootlegger.facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@the.bootlegger.bar" target="_blank"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 The Bootlegger. Tous droits réservés. <a href="mentions-legales.html">Mentions Légales</a>.</p>
+        <p>&copy; 2026 The Bootlegger. <a href="mentions-legales.html">Mentions Légales</a>.</p>
     </div>
 </footer>
+
 <script>
+    // 1. GESTION DES DEUX SLIDERS (INSTA ET TIKTOK)
+    function changeSlide(sliderId, n) {
+        const container = document.getElementById(sliderId);
+        const slides = container.querySelectorAll('.story-slide');
+        const fills = container.querySelectorAll('.progress-fill');
+        
+        let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+        if (activeIndex === -1) activeIndex = 0;
+        
+        // Reset actuel
+        slides[activeIndex].classList.remove('active');
+        fills.forEach(f => { f.style.transition = 'none'; f.style.width = '0%'; });
+        
+        // Calcul du nouveau slide
+        activeIndex += n;
+        if (activeIndex >= slides.length) activeIndex = 0;
+        if (activeIndex < 0) activeIndex = slides.length - 1;
+        
+        // Activation du nouveau
+        slides[activeIndex].classList.add('active');
+        
+        // Animation de la barre
+        setTimeout(() => {
+            fills[activeIndex].style.transition = 'width 5s linear';
+            fills[activeIndex].style.width = '100%';
+        }, 50);
+
+        // Relance les vidéos si présentes
+        const video = slides[activeIndex].querySelector('video');
+        if (video) {
+            container.querySelectorAll('video').forEach(v => v.pause());
+            video.currentTime = 0;
+            video.play();
+        }
+    }
+
+    // Initialiser les barres au chargement
+    setTimeout(() => {
+        changeSlide('instaSlider', 0);
+        changeSlide('tiktokSlider', 0);
+    }, 100);
+
+    // Auto-play indépendant
+    setInterval(() => changeSlide('instaSlider', 1), 5000);
+    setInterval(() => changeSlide('tiktokSlider', 1), 6000);
+
+    // 2. GESTION DU MENU BURGER
     const burger = document.getElementById('burger');
-const nav = document.getElementById('nav-links');
+    const nav = document.getElementById('nav-links');
 
-burger.addEventListener('click', () => {
-    // Affiche/Cache le menu
-    nav.classList.toggle('nav-active');
-    
-    // Anime le burger en croix
-    burger.classList.toggle('toggle');
-});
-
-// Ferme le menu si on clique sur un lien (utile pour les sites d'une seule page)
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav-active');
-        burger.classList.remove('toggle');
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
     });
-});
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
+        });
+    });
 </script>
 </body>
 </html>
