@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://bootleggerbar.fr/experience</loc>
+    <video:video>
+      <video:thumbnail_loc>https://bootleggerbar.fr/images/concert.jpg</video:thumbnail_loc>
+      <video:title>Ambiance au Bootlegger Bar - Vidéo 1</video:title>
+      <video:description>Découvrez l'énergie des soirées au Bootlegger à Bourg-en-Bresse.</video:description>
+      <video:content_loc>https://bootleggerbar.fr/video/tiktok1.mp4</video:content_loc>
+      <video:publication_date>2026-01-01T17:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://bootleggerbar.fr/images/jeje.png</video:thumbnail_loc>
+      <video:title>Soirée Mixologie au Bootlegger - Vidéo 2</video:title>
+      <video:description>L'art du cocktail clandestin et l'énergie de la nuit.</video:description>
+      <video:content_loc>https://bootleggerbar.fr/video/tiktok2.mp4</video:content_loc>
+      <video:publication_date>2026-01-01T17:00:00+01:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+</urlset>

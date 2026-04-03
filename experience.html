@@ -23,27 +23,16 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EventVenue",
-  "name": "L'Expérience Bootlegger",
-  "description": "Découvrez l'ambiance unique du Bootlegger à Bourg-en-Bresse : concerts live, mixologie et soirées à thème.",
-  "url": "https://bootleggerbar.fr/experience",
-  "image": "https://bootleggerbar.fr/images/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2 Rue de la République",
-    "addressLocality": "Bourg-en-Bresse",
-    "postalCode": "01000",
-    "addressCountry": "FR"
-  },
-  "publicAccess": true,
-  "isAccessibleForFree": true,
-  "containsPlace": {
-    "@type": "Bar",
-    "name": "Le Bootlegger"
-  }
+  "@type": "VideoObject",
+  "name": "Ambiance au Bootlegger Bar",
+  "description": "Découvrez l'énergie et l'ambiance nocturne du Bootlegger à Bourg-en-Bresse.",
+  "thumbnailUrl": "https://bootleggerbar.fr/images/preview-video-1.jpg",
+  "uploadDate": "2024-01-01T08:00:00+08:00",
+  "contentUrl": "https://bootleggerbar.fr/video/tiktok1.mp4",
+  "embedUrl": "https://bootleggerbar.fr/experience"
 }
 </script>
 </head>
@@ -147,11 +136,11 @@
         <div class="social-column">
             <div class="story-container" id="tiktokSlider">
                 <div class="story-slide active">
-                    <<video src="video/tiktok1.mp4" muted loop playsinline></video>
+                    <video src="video/tiktok1.mp4" poster="images/thumb-tiktok1.jpg" muted loop playsinline preload="metadata"></video>
                     <div class="story-overlay"><span>Ambiance</span></div>
                 </div>
                 <div class="story-slide">
-                    <video src="video/tiktok2.mp4" muted loop playsinline></video>
+                    <video src="video/tiktok2.mp4" poster="images/thumb-tiktok2.jpg" muted loop playsinline preload="metadata"></video>
                     <div class="story-overlay"><span>Soirée</span></div>
                 </div>
 
