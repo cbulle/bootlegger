@@ -9,7 +9,7 @@ collections:
   - name: "pages"
     label: "Modifier les pages"
     files:
-      # --- PAGE ACCUEIL ---
+    
       - file: "data/accueil.json"
         label: "Page Accueil"
         name: "accueil"
@@ -19,7 +19,6 @@ collections:
           - { label: "Galerie 2 (La Flamme)", name: "img_galerie2", widget: "image" }
           - { label: "Galerie 3 (Immersion)", name: "img_galerie3", widget: "image" }
 
-      # --- PAGE EXPÉRIENCE ---
       - file: "data/experience.json"
         label: "Page L'Expérience"
         name: "experience"
@@ -32,7 +31,6 @@ collections:
           - { label: "Vidéo TikTok 1", name: "video_tiktok1", widget: "file" }
           - { label: "Vidéo TikTok 2", name: "video_tiktok2", widget: "file" }
 
-      # --- PAGE LA CARTE ---
       - file: "data/lacarte.json"
         label: "Page La Carte"
         name: "lacarte"
