@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main 
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Modifier les pages"
+    files:
+      # --- PAGE ACCUEIL ---
+      - file: "data/accueil.json"
+        label: "Page Accueil"
+        name: "accueil"
+        fields:
+          - { label: "Photo Barman", name: "img_barman", widget: "image" }
+          - { label: "Galerie 1 (L'Art du Geste)", name: "img_galerie1", widget: "image" }
+          - { label: "Galerie 2 (La Flamme)", name: "img_galerie2", widget: "image" }
+          - { label: "Galerie 3 (Immersion)", name: "img_galerie3", widget: "image" }
+
+      # --- PAGE EXPÉRIENCE ---
+      - file: "data/experience.json"
+        label: "Page L'Expérience"
+        name: "experience"
+        fields:
+          - { label: "Ambiance 1 (Concert)", name: "img_ambiance1", widget: "image" }
+          - { label: "Ambiance 2 (DJ Set)", name: "img_ambiance2", widget: "image" }
+          - { label: "Ambiance 3 (Intérieur)", name: "img_ambiance3", widget: "image" }
+          - { label: "Story Insta 1", name: "img_insta1", widget: "image" }
+          - { label: "Story Insta 2", name: "img_insta2", widget: "image" }
+          - { label: "Vidéo TikTok 1", name: "video_tiktok1", widget: "file" }
+          - { label: "Vidéo TikTok 2", name: "video_tiktok2", widget: "file" }
+
+      # --- PAGE LA CARTE ---
+      - file: "data/lacarte.json"
+        label: "Page La Carte"
+        name: "lacarte"
+        fields:
+          - { label: "Menu des Boissons (PDF)", name: "pdf_boissons", widget: "file" }
+          - { label: "Menu des Planches (PDF)", name: "pdf_planches", widget: "file" }
+          - { label: "Aperçu 1 (Sex on the beach)", name: "img_apercu1", widget: "image" }
+          - { label: "Aperçu 2 (Planche)", name: "img_apercu2", widget: "image" }
+          - { label: "Aperçu 3 (Pornstar)", name: "img_apercu3", widget: "image" }

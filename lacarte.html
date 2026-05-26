@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Carte des Cocktails | Le Bootlegger</title>
-    <link rel="canonical" href="https://bootleggerbar.fr/lacarte">
+    <link rel="canonical" href="https://bootleggerbar.fr/lacarte.fr">
     <meta name="description" content="Découvrez nos créations cocktails, vins et planches à partager. Des recettes uniques inspirées des années folles.">
 
     <meta property="og:type" content="website">
@@ -48,6 +48,7 @@
   }
 }
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -75,8 +76,8 @@
     <p>Découvrez notre sélection complète de boissons et nos planches gourmandes.</p>
     
     <div class="pdf-container">
-        <a href="doc/boisson.pdf" class="btn-gold filled" target="_blank"><i class="fas fa-cocktail"></i> Carte des Boissons</a>
-        <a href="doc/planche.pdf" class="btn-gold filled" target="_blank"><i class="fas fa-utensils"></i> Carte des Planches</a>
+        <a id="cms-pdf_boissons"href="doc/boisson.pdf" class="btn-gold filled" target="_blank"><i class="fas fa-cocktail"></i> Carte des Boissons</a>
+        <a id="cms-pdf_planches" href="doc/planche.pdf" class="btn-gold filled" target="_blank"><i class="fas fa-utensils"></i> Carte des Planches</a>
     </div>
 </section>
 
@@ -85,15 +86,15 @@
     <h2 class="section-title">Aperçu de nos créations</h2>
     <div class="gallery-grid">
         <div class="gallery-item">
-            <img src="images/vodka.jpg" alt="Cocktail Signature">
+            <img id="cms-apercu1" src="images/vodka.jpg" alt="Cocktail Signature">
             <div class="photo-caption">Le Sex on the beach</div>
         </div>
         <div class="gallery-item">
-            <img src="images/planche.jpg" alt="Planche Apéritive">
+            <img id="cms-apercu2" src="images/planche.jpg" alt="Planche Apéritive">
             <div class="photo-caption">Planche du Terroir</div>
         </div>
         <div class="gallery-item">
-            <img src="images/pornstar.jpg" alt="Cocktail création">
+            <img id="cms-apercu3" src="images/pornstar.jpg" alt="Cocktail création">
             <div class="photo-caption">Le Pornstar Martini</div>
         </div>
     </div>
@@ -141,6 +142,36 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         burger.classList.remove('toggle');
     });
 });
+</script>
+<script>
+    const cmsMappings = [
+        { id: 'cms-pdf_boissons', field: 'pdf_boissons', attr: 'href' },
+        { id: 'cms-pdf_planches', field: 'pdf_planches', attr: 'href' },
+        { id: 'cms-apercu1', field: 'img_apercu1', attr: 'src' },
+        { id: 'cms-apercu2', field: 'img_apercu2', attr: 'src' },
+        { id: 'cms-apercu3', field: 'img_apercu3', attr: 'src' }
+    ];
+
+    function cmsUpdateFromData(data) {
+        cmsMappings.forEach(({ id, field, attr }) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const value = data[field];
+            if (!value) return;
+            el[attr] = value;
+            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
+                el.load();
+            }
+        });
+    }
+
+    fetch('/data/lacarte.json')
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error('Fichier JSON non trouvé');
+        })
+        .then(cmsUpdateFromData)
+        .catch(error => console.log('Affichage classique :', error));
 </script>
 </body>
 </html>

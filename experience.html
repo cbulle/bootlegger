@@ -35,6 +35,7 @@
   "embedUrl": "https://bootleggerbar.fr/experience"
 }
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -65,9 +66,9 @@
     </p>
     
     <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/concert.jpg" alt="Concert Live au bar"></div>
-        <div class="gallery-item"><img src="images/jeje.png" alt="Soirée DJ Set"></div>
-        <div class="gallery-item"><img src="images/vodka.jpg" alt="Intérieur du bar"></div>
+        <div class="gallery-item"><img id="cms-ambiance1" src="images/concert.jpg" alt="Concert Live au bar"></div>
+        <div class="gallery-item"><img id="cms-ambiance2" src="images/jeje.png" alt="Soirée DJ Set"></div>
+        <div class="gallery-item"><img id="cms-ambiance3" src="images/vodka.jpg" alt="Intérieur du bar"></div>
     </div>
 </section>
 
@@ -114,11 +115,11 @@
         <div class="social-column">
             <div class="story-container" id="instaSlider">
                 <div class="story-slide active">
-                    <img src="images/dj.png" alt="Story Insta 1">
+                    <img id="cms-insta1" src="images/dj.png" alt="Story Insta 1">
                     <div class="story-overlay"><span>Soirée</span></div>
                 </div>
                 <div class="story-slide">
-                    <img src="images/planche.jpg" alt="Story Insta 2">
+                    <img id="cms-insta2" src="images/planche.jpg" alt="Story Insta 2">
                     <div class="story-overlay"><span>Planche </span></div>
                 </div>
                 
@@ -136,11 +137,11 @@
         <div class="social-column">
             <div class="story-container" id="tiktokSlider">
                 <div class="story-slide active">
-                    <video src="video/tiktok1.mp4" poster="images/thumb-tiktok1.jpg" muted loop playsinline preload="metadata"></video>
+                    <video id="cms-tiktok1" src="video/tiktok1.mp4" poster="images/thumb-tiktok1.jpg" muted loop playsinline preload="metadata"></video>
                     <div class="story-overlay"><span>Ambiance</span></div>
                 </div>
                 <div class="story-slide">
-                    <video src="video/tiktok2.mp4" poster="images/thumb-tiktok2.jpg" muted loop playsinline preload="metadata"></video>
+                    <video id="cms-tiktok2" src="video/tiktok2.mp4" poster="images/thumb-tiktok2.jpg" muted loop playsinline preload="metadata"></video>
                     <div class="story-overlay"><span>Soirée</span></div>
                 </div>
 
@@ -247,6 +248,38 @@
             burger.classList.remove('toggle');
         });
     });
+</script>
+<script>
+    const cmsMappings = [
+        { id: 'cms-ambiance1', field: 'img_ambiance1', attr: 'src' },
+        { id: 'cms-ambiance2', field: 'img_ambiance2', attr: 'src' },
+        { id: 'cms-ambiance3', field: 'img_ambiance3', attr: 'src' },
+        { id: 'cms-insta1', field: 'img_insta1', attr: 'src' },
+        { id: 'cms-insta2', field: 'img_insta2', attr: 'src' },
+        { id: 'cms-tiktok1', field: 'video_tiktok1', attr: 'src' },
+        { id: 'cms-tiktok2', field: 'video_tiktok2', attr: 'src' }
+    ];
+
+    function cmsUpdateFromData(data) {
+        cmsMappings.forEach(({ id, field, attr }) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const value = data[field];
+            if (!value) return;
+            el[attr] = value;
+            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
+                el.load();
+            }
+        });
+    }
+
+    fetch('/data/experience.json')
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error('Fichier JSON non trouvé');
+        })
+        .then(cmsUpdateFromData)
+        .catch(error => console.log('Affichage classique :', error));
 </script>
 </body>
 </html>

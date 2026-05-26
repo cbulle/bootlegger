@@ -58,6 +58,7 @@
   "priceRange": "$$"
 }
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -88,7 +89,7 @@
     <h2 class="section-title">L'Âme du Comptoir</h2>
     <div class="barman-section">
         <div class="barman-image">
-            <img src="images/barman.png" alt="Notre mixologue en pleine création, format vertical">
+            <img id="cms-barman" src="images/barman.png" alt="Notre mixologue en pleine création, format vertical">
         </div>
         <div class="barman-text">
             <span class="energy-caption">Précision. Passion. Performance.</span>
@@ -110,15 +111,15 @@
     
     <div class="story-gallery-grid">
         <div class="story-gallery-item">
-            <img src="images/jeje.png" alt="L'énergie du service, format vertical">
+            <img id="cms-galerie1" src="images/jeje.png" alt="L'énergie du service, format vertical">
             <div class="photo-caption">L'Art du Geste</div>
         </div>
         <div class="story-gallery-item">
-            <img src="images/vodka.jpg" alt="Mixologie avec flamme, format vertical">
+            <img id="cms-galerie2" src="images/vodka.jpg" alt="Mixologie avec flamme, format vertical">
             <div class="photo-caption">La Flamme</div>
         </div>
         <div class="story-gallery-item">
-            <img src="images/exterieur.png" alt="Zoom sur le patrimoine et la porte des jacobins ambiance historique">
+            <img id="cms-galerie3" src="images/exterieur.png" alt="Zoom sur le patrimoine et la porte des jacobins ambiance historique">
             <div class="photo-caption">Immersion</div>
         </div>
     </div>
@@ -166,6 +167,46 @@
             burger.classList.remove('toggle');
         });
     });
+</script>
+<script>
+    const cmsMappings = [
+        { id: 'cms-barman', field: 'img_barman', attr: 'src' },
+        { id: 'cms-galerie1', field: 'img_galerie1', attr: 'src' },
+        { id: 'cms-galerie2', field: 'img_galerie2', attr: 'src' },
+        { id: 'cms-galerie3', field: 'img_galerie3', attr: 'src' }
+    ];
+
+    function cmsUpdateFromData(data) {
+        cmsMappings.forEach(({ id, field, attr }) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const value = data[field];
+            if (!value) return;
+            el[attr] = value;
+            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
+                el.load();
+            }
+        });
+    }
+
+    fetch('/data/accueil.json')
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error('Fichier JSON non trouvé');
+        })
+        .then(cmsUpdateFromData)
+        .catch(error => console.log('Affichage classique :', error));
+</script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
 </script>
 </body>
 </html>
