@@ -158,29 +158,5 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     });
 });
 </script>
-<script>
-    const cmsMappings = [];
-
-    function cmsUpdateFromData(data) {
-        cmsMappings.forEach(({ id, field, attr }) => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const value = data[field];
-            if (!value) return;
-            el[attr] = value;
-            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
-                el.load();
-            }
-        });
-    }
-
-    fetch('/data/accueil.json')
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Fichier JSON non trouvé');
-        })
-        .then(cmsUpdateFromData)
-        .catch(error => console.log('Affichage classique :', error));
-</script>
 </body>
 </html>

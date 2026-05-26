@@ -58,6 +58,8 @@
   "priceRange": "$$"
 }
 </script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
 </head>
 <body>
 
@@ -152,6 +154,7 @@
 </footer>
 
 <script>
+    // 1. GESTION DU MENU BURGER
     const burger = document.getElementById('burger');
     const nav = document.getElementById('nav-links');
 
@@ -166,8 +169,8 @@
             burger.classList.remove('toggle');
         });
     });
-</script>
-<script>
+
+    // 2. RECUPERATION DES DONNEES CMS (JSON)
     const cmsMappings = [
         { id: 'cms-barman', field: 'img_barman', attr: 'src' },
         { id: 'cms-galerie1', field: 'img_galerie1', attr: 'src' },
@@ -195,17 +198,18 @@
         })
         .then(cmsUpdateFromData)
         .catch(error => console.log('Affichage classique :', error));
-</script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+
+    // 3. REDIRECTION APRES CONNEXION NETLIFY IDENTITY
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
         });
-      }
-    });
-  }
+    }
 </script>
+</body>
 </body>
 </html>
