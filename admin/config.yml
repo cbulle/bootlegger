@@ -28,15 +28,15 @@ collections:
           - { label: "Ambiance 3 (Intérieur)", name: "img_ambiance3", widget: "image" }
           - { label: "Story Insta 1", name: "img_insta1", widget: "image" }
           - { label: "Story Insta 2", name: "img_insta2", widget: "image" }
-          - { label: "Vidéo TikTok 1", name: "video_tiktok1", widget: "file" }
-          - { label: "Vidéo TikTok 2", name: "video_tiktok2", widget: "file" }
+          - { label: "Vidéo TikTok 1", name: "video_tiktok1", widget: "file", media_folder: "video", public_folder: "/video" }
+          - { label: "Vidéo TikTok 2", name: "video_tiktok2", widget: "file", media_folder: "video", public_folder: "/video" }
 
       - file: "data/lacarte.json"
         label: "Page La Carte"
         name: "lacarte"
         fields:
-          - { label: "Menu des Boissons (PDF)", name: "pdf_boissons", widget: "file" }
-          - { label: "Menu des Planches (PDF)", name: "pdf_planches", widget: "file" }
-          - { label: "Aperçu 1 (Sex on the beach)", name: "img_apercu1", widget: "image" }
-          - { label: "Aperçu 2 (Planche)", name: "img_apercu2", widget: "image" }
-          - { label: "Aperçu 3 (Pornstar)", name: "img_apercu3", widget: "image" }
+          - { label: "PDF Boissons", name: "pdf_boissons", widget: "file", media_folder: "doc", public_folder: "/doc" }
+          - { label: "PDF Planches", name: "pdf_planches", widget: "file", media_folder: "doc", public_folder: "/doc" }
+          - { label: "Aperçu Carte 1", name: "img_apercu1", widget: "image" }
+          - { label: "Aperçu Carte 2", name: "img_apercu2", widget: "image" }
+          - { label: "Aperçu Carte 3", name: "img_apercu3", widget: "image" }
