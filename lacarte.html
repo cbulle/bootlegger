@@ -48,8 +48,6 @@
   }
 }
 </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 </head>
 <body>
 
@@ -143,36 +141,6 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         burger.classList.remove('toggle');
     });
 });
-</script>
-<script>
-    const cmsMappings = [
-        { id: 'cms-pdf_boissons', field: 'pdf_boissons', attr: 'href' },
-        { id: 'cms-pdf_planches', field: 'pdf_planches', attr: 'href' },
-        { id: 'cms-apercu1', field: 'img_apercu1', attr: 'src' },
-        { id: 'cms-apercu2', field: 'img_apercu2', attr: 'src' },
-        { id: 'cms-apercu3', field: 'img_apercu3', attr: 'src' }
-    ];
-
-    function cmsUpdateFromData(data) {
-        cmsMappings.forEach(({ id, field, attr }) => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const value = data[field];
-            if (!value) return;
-            el[attr] = value;
-            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
-                el.load();
-            }
-        });
-    }
-
-    fetch('/data/lacarte.json')
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Fichier JSON non trouvé');
-        })
-        .then(cmsUpdateFromData)
-        .catch(error => console.log('Affichage classique :', error));
 </script>
 </body>
 </html>

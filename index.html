@@ -169,46 +169,6 @@
             burger.classList.remove('toggle');
         });
     });
-
-    // 2. RECUPERATION DES DONNEES CMS (JSON)
-    const cmsMappings = [
-        { id: 'cms-barman', field: 'img_barman', attr: 'src' },
-        { id: 'cms-galerie1', field: 'img_galerie1', attr: 'src' },
-        { id: 'cms-galerie2', field: 'img_galerie2', attr: 'src' },
-        { id: 'cms-galerie3', field: 'img_galerie3', attr: 'src' }
-    ];
-
-    function cmsUpdateFromData(data) {
-        cmsMappings.forEach(({ id, field, attr }) => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const value = data[field];
-            if (!value) return;
-            el[attr] = value;
-            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
-                el.load();
-            }
-        });
-    }
-
-    fetch('/data/accueil.json')
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Fichier JSON non trouvé');
-        })
-        .then(cmsUpdateFromData)
-        .catch(error => console.log('Affichage classique :', error));
-
-    // 3. REDIRECTION APRES CONNEXION NETLIFY IDENTITY
-    if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                });
-            }
-        });
-    }
 </script>
 </body>
 </body>

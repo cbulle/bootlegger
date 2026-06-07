@@ -35,8 +35,6 @@
   "embedUrl": "https://bootleggerbar.fr/experience"
 }
 </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 </head>
 <body>
 
@@ -249,38 +247,6 @@
             burger.classList.remove('toggle');
         });
     });
-</script>
-<script>
-    const cmsMappings = [
-        { id: 'cms-ambiance1', field: 'img_ambiance1', attr: 'src' },
-        { id: 'cms-ambiance2', field: 'img_ambiance2', attr: 'src' },
-        { id: 'cms-ambiance3', field: 'img_ambiance3', attr: 'src' },
-        { id: 'cms-insta1', field: 'img_insta1', attr: 'src' },
-        { id: 'cms-insta2', field: 'img_insta2', attr: 'src' },
-        { id: 'cms-tiktok1', field: 'video_tiktok1', attr: 'src' },
-        { id: 'cms-tiktok2', field: 'video_tiktok2', attr: 'src' }
-    ];
-
-    function cmsUpdateFromData(data) {
-        cmsMappings.forEach(({ id, field, attr }) => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const value = data[field];
-            if (!value) return;
-            el[attr] = value;
-            if (attr === 'src' && el.tagName.toLowerCase() === 'video') {
-                el.load();
-            }
-        });
-    }
-
-    fetch('/data/experience.json')
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Fichier JSON non trouvé');
-        })
-        .then(cmsUpdateFromData)
-        .catch(error => console.log('Affichage classique :', error));
 </script>
 </body>
 </html>
